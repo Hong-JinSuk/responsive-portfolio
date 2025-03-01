@@ -158,7 +158,7 @@ export default function Page() {
         </section>
       </header>
       <main className="flex flex-col w-full overflow-hidden relative mb-[115px]">
-        <div className="gradation bg-gradient-to-t from-transparent to-white/100 dark:to-[#0E172A]/100 fixed w-full top-0 h-[100px] z-50"></div>
+        <div className="gradation bg-gradient-to-t from-transparent to-white/100 dark:to-[#0E172A]/100 fixed w-full top-0 lg:h-[100px] md:h-16 z-50"></div>
         <section className="w-full lg:pt-[70px]">
           <p className="text-lg font-semibold hidden">About Me</p>
           {AboutMe.map((about, index) => (
