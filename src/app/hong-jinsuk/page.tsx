@@ -5,8 +5,11 @@ import Github from '@/assets/images/logo-github.svg';
 import Instargram from '@/assets/images/logo-instagram.svg';
 import LinkedIn from '@/assets/images/logo-linkedin.svg';
 import Card from '@/components/ui/card';
+import { Separator } from '@/components/ui/separator';
 import SwitchTheme from '@/components/ui/switch-theme';
 import { useMaskImage } from '@/hooks/use-mask-images';
+import { useMouseSpy } from '@/hooks/use-mouse-spy';
+import { useScrollSpy } from '@/hooks/use-scroll-spy';
 import { CardType } from '@/types/types';
 import { ArrowRight, Sparkles } from 'lucide-react';
 import Image from 'next/image';
@@ -103,9 +106,16 @@ const AboutMe = [
             hanging out with my wife with a cup of coffee c o f f e e`,
 ];
 
+const sectionIds = ['AboutMe', 'Experience', 'Projects'];
+const sectionMouseIds = ['AboutMe', 'Experience', 'Projects'];
+
 export default function Page() {
   const router = useRouter();
   const maskStyle = useMaskImage(40);
+  const activeScrollId = useScrollSpy({ ids: sectionIds, offset: 0 });
+  const activeMouseId = useMouseSpy({ ids: sectionMouseIds });
+
+  const activeId = activeMouseId ?? activeScrollId;
 
   const [appliedMask, setAppliedMask] = useState<string | null>(null);
 
@@ -138,6 +148,39 @@ export default function Page() {
             <span>{IntroduceMyself}</span>
           </div>
         </section>
+        <section className="hidden lg:block h-full mb-20">
+          <nav className="flex flex-col gap-2">
+            {sectionMouseIds.map((id) => (
+              <div className="flex items-center space-x-3">
+                <Separator
+                  className={`w-10 h-[2px] transition-all duration-500 ${
+                    activeId === id ? 'w-16 bg-black dark:bg-white' : ''
+                  }`}
+                />
+                <span
+                  key={id}
+                  className={`${
+                    activeId === id ? 'opacity-100' : ''
+                  } text-lg opacity-50 transition-all duration-500`}
+                >
+                  {id}
+                </span>
+              </div>
+            ))}
+          </nav>
+          {/* <nav>
+            <ul style={{ display: 'flex', gap: '1rem' }}>
+              {sectionIds.map((id) => (
+                <li
+                  key={id}
+                  style={{ fontWeight: activeId === id ? 'bold' : 'normal' }}
+                >
+                  {id}
+                </li>
+              ))}
+            </ul>
+          </nav> */}
+        </section>
         <section>
           <div className="flex pb-10 pt-10">
             <div className="flex space-x-4">
@@ -157,10 +200,12 @@ export default function Page() {
           </div>
         </section>
       </header>
-      <main className="flex flex-col w-full overflow-hidden relative mb-[115px]">
+      <main className="flex flex-col w-full overflow-hidden relative mb-[115px] gap-10">
         <div className="gradation bg-gradient-to-t from-transparent to-white/100 dark:to-[#0E172A]/100 fixed w-full top-0 lg:h-[100px] md:h-16 z-50"></div>
-        <section className="w-full lg:pt-[70px]">
-          <p className="text-lg font-semibold hidden">About Me</p>
+        <section className="w-full lg:pt-[70px]" id={sectionMouseIds[0]}>
+          <p className="text-lg font-semibold lg:pt-7" id={sectionIds[0]}>
+            About Me
+          </p>
           {AboutMe.map((about, index) => (
             <Fragment key={index}>
               <br />
@@ -168,8 +213,10 @@ export default function Page() {
             </Fragment>
           ))}
         </section>
-        <section className="w-full flex flex-col">
-          <p className="py-4">EXPERIENCE</p>
+        <section className="w-full flex flex-col" id={sectionMouseIds[1]}>
+          <p className="pt-7 text-lg font-semibold" id={sectionIds[1]}>
+            EXPERIENCE
+          </p>
           <div className="flex flex-col group">
             {ExData.map((ex, index) => (
               <Card
@@ -180,7 +227,7 @@ export default function Page() {
                 stacks={ex.stacks}
                 key={index}
                 toNavigate={ex.toNavigate}
-                className="py-8 lg:cursor-pointer lg:hover:!opacity-100 lg:group-hover:opacity-40 transition-opacity duration-500"
+                className="py-8 lg:hover:!opacity-100 lg:group-hover:opacity-40 transition-opacity duration-500"
               />
             ))}
           </div>
@@ -191,8 +238,10 @@ export default function Page() {
             </span>
           </div>
         </section>
-        <section className="w-full flex flex-col">
-          <p className="py-4">PROJECTS</p>
+        <section className="w-full flex flex-col" id={sectionMouseIds[2]}>
+          <p className="pt-7 text-lg font-semibold" id={sectionIds[2]}>
+            PROJECTS
+          </p>
           <div className="flex flex-col group">
             {ProjectsData.map((project, index) => (
               <Card
@@ -202,14 +251,13 @@ export default function Page() {
                 intro={project.intro}
                 key={index}
                 toNavigate=""
-                className="py-8 lg:cursor-pointer lg:hover:!opacity-100 lg:group-hover:opacity-40 transition-opacity duration-500"
+                className="py-8 lg:hover:!opacity-100 lg:group-hover:opacity-40 transition-opacity duration-500"
               />
             ))}
           </div>
           <div className="flex items-center py-6">
             <span className="flex items-center cursor-pointer group hover:underline underline-offset-4 decoration-blue-400">
               <Link href={'/projects'}>View All Projects </Link>
-
               <ArrowRight className="size-5 group-hover:ml-2 transition-all duration-300" />
             </span>
           </div>
