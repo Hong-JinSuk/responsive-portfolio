@@ -7,15 +7,13 @@ import LinkedIn from '@/assets/images/logo-linkedin.svg';
 import Card from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
 import SwitchTheme from '@/components/ui/switch-theme';
-import { useMaskImage } from '@/hooks/use-mask-images';
 import { useMouseSpy } from '@/hooks/use-mouse-spy';
 import { useScrollSpy } from '@/hooks/use-scroll-spy';
 import { CardType } from '@/types/types';
 import { ArrowRight, Sparkles } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
-import { Fragment, useEffect, useState } from 'react';
+import { Fragment } from 'react';
 
 const ExData: CardType[] = [
   {
@@ -110,25 +108,24 @@ const sectionIds = ['AboutMe', 'Experience', 'Projects'];
 const sectionMouseIds = ['AboutMe', 'Experience', 'Projects'];
 
 export default function Page() {
-  const router = useRouter();
-  const maskStyle = useMaskImage(40);
+  // const maskStyle = useMaskImage(40);
   const activeScrollId = useScrollSpy({ ids: sectionIds, offset: 0 });
   const activeMouseId = useMouseSpy({ ids: sectionMouseIds });
 
   const activeId = activeMouseId ?? activeScrollId;
 
-  const [appliedMask, setAppliedMask] = useState<string | null>(null);
+  // const [appliedMask, setAppliedMask] = useState<string | null>(null);
 
-  useEffect(() => {
-    const handleResize = () => {
-      const isLg = window.innerWidth >= 1024;
-      setAppliedMask(isLg ? maskStyle : '');
-    };
+  // useEffect(() => {
+  //   const handleResize = () => {
+  //     const isLg = window.innerWidth >= 1024;
+  //     setAppliedMask(isLg ? maskStyle : '');
+  //   };
 
-    handleResize(); // 초기 실행 (현재 화면 크기 반영)
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, [maskStyle]);
+  //   handleResize(); // 초기 실행 (현재 화면 크기 반영)
+  //   window.addEventListener('resize', handleResize);
+  //   return () => window.removeEventListener('resize', handleResize);
+  // }, [maskStyle]);
 
   return (
     <div className="flex flex-col lg:flex-row w-full h-full relative">
@@ -150,15 +147,17 @@ export default function Page() {
         </section>
         <section className="hidden lg:block h-full mb-20">
           <nav className="flex flex-col gap-2">
-            {sectionMouseIds.map((id) => (
-              <div className="flex items-center space-x-3">
+            {sectionMouseIds.map((id, index) => (
+              <div
+                className="flex items-center space-x-3"
+                key={`${id}-${index}`}
+              >
                 <Separator
                   className={`w-10 h-[2px] transition-all duration-500 ${
                     activeId === id ? 'w-16 bg-black dark:bg-white' : ''
                   }`}
                 />
                 <span
-                  key={id}
                   className={`${
                     activeId === id ? 'opacity-100' : ''
                   } text-lg opacity-50 transition-all duration-500`}

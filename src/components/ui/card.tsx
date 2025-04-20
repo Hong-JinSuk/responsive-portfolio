@@ -12,13 +12,12 @@ export default function Card({
   content,
   stacks,
   intro,
-  toNavigate = 'hong-jinsuk',
   className,
 }: CardType) {
   const router = useRouter();
 
   const navigate = (toNavigate: string) => {
-    router.push('/hong-jinsuk');
+    router.push(`/${toNavigate}`);
     // router.push(`/${toNavigate}`);
   };
 
@@ -35,7 +34,7 @@ export default function Card({
         <div className="flex flex-col">
           <span
             className="w-fit cursor-pointer hover:text-blue-800 font-bold"
-            onClick={() => navigate(toNavigate)}
+            onClick={() => navigate('hong-jinsuk')}
           >
             {title}
           </span>
