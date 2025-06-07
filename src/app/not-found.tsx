@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import {
   linkMessage,
   notFoundMessage,
+  notFoundToastMessage,
   subNotFoundMessage,
 } from '@/constant/data';
 import useToast from '@/hooks/use-toast';
@@ -12,17 +13,23 @@ import { languageAtom } from '@/store/atom';
 import { useAtomValue } from 'jotai';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function NotFound() {
   const { toast } = useToast();
   const lang = useAtomValue(languageAtom);
   const router = useRouter();
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    toast('error', '잘못된 페이지 접근입니다.');
-    console.log('error test');
+    setMounted(true);
   }, []);
+
+  useEffect(() => {
+    if (mounted) {
+      toast('error', notFoundToastMessage[lang]);
+    }
+  }, [mounted]);
 
   return (
     <div className="w-full h-full flex flex-col justify-center items-center max-md:mt-16 md:mt-28 lg:mt-40">

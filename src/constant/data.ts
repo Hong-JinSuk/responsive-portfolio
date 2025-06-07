@@ -10,24 +10,20 @@ export const ExData: CardType[] = [
     edate: 'JUL 2025',
     title: {
       ko: '농협은행 AI 통합 프로젝트',
-      eng: '',
+      eng: 'NHBank AI Integration Project',
     },
     content: {
-      ko: '농협은행 AI 통합 프로젝트에서 React를 이용한 프론트엔드를 맡아 작업하였습니다.',
-      eng: '',
+      ko: '농협은행 AI 통합 프로젝트에서 React를 이용한 프론트엔드 개발을 담당하였으며, LGCNS와 뱅가드랩과 협업하여 요구사항을 정리하고, UI뿐만 아니라 요구에 맞는 프론트엔드 기능 구현에도 직접 참여하였습니다.',
+      eng: 'I was responsible for frontend development using React in the NongHyup Bank AI Integration Project. I collaborated with LGCNS and Vanguard Lab to define requirements, and participated not only in UI implementation but also in developing frontend functionalities that met those requirements.',
     },
-    stacks: ['React', 'TailwindCSS', 'RESTful API'],
+    stacks: ['React', 'TypeScript', 'TailwindCSS', 'RESTful API'],
     toNavigate: '',
   },
 ];
 
 export const AboutMe = [
   {
-    ko: `I'm a full-stack engineer focusing on creating scalable and
-            maintainable codebases. I have extensive experience with TypeScript,
-            React and Next.js at a startup. Thanks to my work experience at an
-            ad agency, I've honed my communication skills to solve real-world
-            problems interactively.`,
+    ko: `안녕하세요. 저는 올해 1년차인 풀스택 개발자 홍진석입니다.`,
     eng: `I'm a full-stack engineer focusing on creating scalable and
             maintainable codebases. I have extensive experience with TypeScript,
             React and Next.js at a startup. Thanks to my work experience at an
@@ -77,8 +73,8 @@ export const SocialLink = [
 ];
 
 export const IntroduceMyself = {
-  ko: 'I build robust and user-friendly web applications from the ground up.',
-  eng: 'I build robust and user-friendly web applications from the ground up.',
+  ko: `풀스택 개발자로서 프론트엔드에서는 UI/UX를, 백엔드에서는 성능 최적화를 중점적으로 개발하고 있습니다.`,
+  eng: `As a full-stack developer, I focus on UI/UX in the frontend and performance optimization in the backend.`,
 };
 
 export const notFoundMessage = {
@@ -88,10 +84,15 @@ export const notFoundMessage = {
 
 export const subNotFoundMessage = {
   ko: `요청하신 페이지가 존재하지 않거나, 이동되었을 수 있습니다.`,
-  eng: `'The page you're looking for doesn't exist or may have been moved.'`,
+  eng: `The page you're looking for doesn't exist or may have been moved.`,
 };
 
 export const linkMessage = {
   ko: '메인으로 이동',
   eng: 'Go to Main',
+};
+
+export const notFoundToastMessage = {
+  ko: '잘못된 페이지 접근입니다.',
+  eng: `It's Invalid page access.`,
 };

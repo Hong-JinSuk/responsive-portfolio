@@ -2,6 +2,7 @@
 
 import Card from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
+import SwitchLang from '@/components/ui/switch-lang';
 import SwitchTheme from '@/components/ui/switch-theme';
 import {
   AboutMe,
@@ -84,7 +85,8 @@ export default function Page() {
                 />
               ))}
             </div>
-            <div className="hidden lg:flex flex-grow pl-60">
+            <div className="hidden lg:flex flex-grow items-center gap-2 pl-52">
+              <SwitchLang />
               <SwitchTheme />
             </div>
           </div>
