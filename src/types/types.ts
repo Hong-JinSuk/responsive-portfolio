@@ -1,6 +1,12 @@
 export type CardType = {
-  title: string;
-  content: string;
+  title: {
+    ko: string;
+    eng: string;
+  };
+  content: {
+    ko: string;
+    eng: string;
+  };
   toNavigate?: string;
   sdate?: string;
   edate?: string;

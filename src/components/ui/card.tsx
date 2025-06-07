@@ -1,6 +1,8 @@
 'use client';
 
+import { languageAtom } from '@/store/atom';
 import { CardType } from '@/types/types';
+import { useAtomValue } from 'jotai';
 import { Minus } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { Button } from './button';
@@ -15,6 +17,7 @@ export default function Card({
   toNavigate,
   className,
 }: CardType) {
+  const lang = useAtomValue(languageAtom);
   const router = useRouter();
 
   const navigate = (toNavigate: string) => {
@@ -42,9 +45,9 @@ export default function Card({
               }
             }}
           >
-            {title}
+            {title[lang]}
           </span>
-          <span className="text-sm py-3 ">{content}</span>
+          <span className="text-sm py-3 ">{content[lang]}</span>
           <div className="flex items-center flex-wrap gap-2">
             {stacks?.map((item, index) => (
               <Button
@@ -62,7 +65,7 @@ export default function Card({
         {intro && (
           <img
             src={typeof intro === 'string' ? intro : URL.createObjectURL(intro)}
-            alt={title}
+            alt={title[lang]}
             className="w-56 border-3 md:mr-10 border-black rounded-lg aspect-[3/2] md:order-first"
           />
         )}

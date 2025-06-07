@@ -12,6 +12,8 @@ import {
 } from '@/constant/data';
 import { useMouseSpy } from '@/hooks/use-mouse-spy';
 import { useScrollSpy } from '@/hooks/use-scroll-spy';
+import { languageAtom } from '@/store/atom';
+import { useAtomValue } from 'jotai';
 import { ArrowRight, ArrowUp, Sparkles } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -21,6 +23,7 @@ const sectionIds = ['AboutMe', 'Experience', 'Projects'];
 const sectionMouseIds = ['AboutMe', 'Experience', 'Projects'];
 
 export default function Page() {
+  const lang = useAtomValue(languageAtom);
   const activeScrollId = useScrollSpy({ ids: sectionIds, offset: 0 });
   const activeMouseId = useMouseSpy({ ids: sectionMouseIds });
 
@@ -42,7 +45,7 @@ export default function Page() {
             <Sparkles className="text-yellow-300 size-5" />
           </div>
           <div className="max-w-80">
-            <span>{IntroduceMyself}</span>
+            <span>{IntroduceMyself[lang]}</span>
           </div>
         </section>
         <section className="hidden lg:block h-full mb-20">
@@ -95,7 +98,7 @@ export default function Page() {
           {AboutMe.map((about, index) => (
             <Fragment key={index}>
               <br />
-              <div className="opacity-70">{about}</div>
+              <div className="opacity-70">{about[lang]}</div>
             </Fragment>
           ))}
         </section>
@@ -146,7 +149,10 @@ export default function Page() {
               <Link href={'/projects'}>View All Projects </Link>
               <ArrowRight className="size-5 group-hover:ml-2 transition-all duration-300" />
             </span>
-            <ArrowUp className="transition-all duration-300 hover:-translate-y-2 cursor-pointer" />
+            <ArrowUp
+              className="transition-all duration-300 hover:-translate-y-2 cursor-pointer"
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            />
           </div>
         </section>
         <div className="gradation bg-gradient-to-b from-transparent to-white/100 dark:to-[#0E172A]/100 fixed w-full bottom-0 h-[100px] z-50"></div>
