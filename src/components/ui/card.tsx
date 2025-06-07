@@ -18,7 +18,6 @@ export default function Card({
   const router = useRouter();
 
   const navigate = (toNavigate: string) => {
-    // router.push(`/${toNavigate}`);
     router.push(`/${toNavigate}`);
   };
 

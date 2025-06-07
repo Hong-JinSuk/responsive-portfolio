@@ -1,3 +1,4 @@
+import { LanguageType } from '@/types/types';
 import { atom } from 'jotai';
 
 const getInitialTheme = () => {
@@ -8,3 +9,5 @@ const getInitialTheme = () => {
 };
 
 export const themeAtom = atom(getInitialTheme());
+
+export const languageAtom = atom<LanguageType>('ko');

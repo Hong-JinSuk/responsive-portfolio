@@ -4,6 +4,12 @@ import Instargram from '@/assets/images/logo-instagram.svg';
 import LinkedIn from '@/assets/images/logo-linkedin.svg';
 import { CardType } from '@/types/types';
 
+// 추후에 변경해야함
+// title: {
+//   ko: '농협은행 AI 통합 프로젝트',
+//   en: 'NongHyup Bank AI Integration Project',
+// },
+
 export const ExData: CardType[] = [
   {
     sdate: '2025-03-15',
@@ -92,3 +98,18 @@ export const SocialLink = [
 
 export const IntroduceMyself =
   'I build robust and user-friendly web applications from the ground up.';
+
+export const notFoundMessage = {
+  ko: '페이지를 찾을 수 없습니다.',
+  eng: `PAGE NOT FOUND`,
+};
+
+export const subNotFoundMessage = {
+  ko: `요청하신 페이지가 존재하지 않거나, 이동되었을 수 있습니다.`,
+  eng: `'The page you're looking for doesn't exist or may have been moved.'`,
+};
+
+export const linkMessage = {
+  ko: '메인으로 이동',
+  eng: 'Go to Main',
+};

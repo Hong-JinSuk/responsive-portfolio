@@ -8,3 +8,5 @@ export type CardType = {
   intro?: string | File;
   className?: string;
 };
+
+export type LanguageType = 'ko' | 'eng';
