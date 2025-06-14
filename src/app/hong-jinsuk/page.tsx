@@ -16,7 +16,6 @@ import { useScrollSpy } from '@/hooks/use-scroll-spy';
 import { languageAtom } from '@/store/atom';
 import { useAtomValue } from 'jotai';
 import { ArrowRight, ArrowUp, Sparkles } from 'lucide-react';
-import Image from 'next/image';
 import Link from 'next/link';
 import { Fragment } from 'react';
 
@@ -77,7 +76,7 @@ export default function Page() {
           <div className="flex pb-10 pt-10">
             <div className="flex space-x-4">
               {SocialLink.map(({ src, url, alt }, index) => (
-                <Image
+                <img
                   key={index}
                   src={src}
                   alt={alt}

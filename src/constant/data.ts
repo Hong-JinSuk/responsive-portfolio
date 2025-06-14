@@ -56,12 +56,13 @@ export const ProjectsData: CardType[] = [
       eng: 'Spoco in goormtonTraining',
     },
     content: {
-      ko: '구름톤트레이닝에서 ',
-      eng: '',
+      ko: '오프라인에서 함께 코딩 스터디를 하던 사람들과 더 효율적으로 공부하기 위해, 온라인에서도 스터디를 이어갈 수 있도록 이 프로젝트를 시작하게 되었습니다. 문제를 온라인에 업로드하고 각자 문제를 풀 수 있을 뿐만 아니라, 서로의 코드에 코멘트를 남기며 어떤 부분이 잘못되었는지 함께 피드백을 주고받을 수 있는 기능도 제공합니다.',
+      eng: 'This project was started to help members of an offline coding study group continue their sessions more efficiently online. Users can upload coding problems, solve them individually, and leave comments on each other’s code to point out mistakes and share feedback.',
     },
     stacks: [],
     intro: ImageList.spoco.src,
     toNavigateTitle: '',
+    toNavigateImg: 'https://www.youtube.com/watch?v=591WiUhtz98',
   },
   {
     title: {
