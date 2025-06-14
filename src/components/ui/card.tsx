@@ -28,13 +28,34 @@ export default function Card({
   return (
     <div className={`flex flex-col lg:flex-row ${className}`}>
       <div className="flex flex-col md:flex-row">
-        {sdate && (
-          <div className="min-w-44">
-            <span className="text-slate-500 text-sm font-semibold flex items-center">
-              {sdate} <Minus strokeWidth={1} /> {edate}
-            </span>
-          </div>
-        )}
+        <div className="flex flex-col">
+          {sdate && (
+            <div className="min-w-44">
+              <span className="text-slate-500 text-sm font-semibold flex items-center">
+                {sdate} <Minus strokeWidth={1} /> {edate}
+              </span>
+            </div>
+          )}
+          {intro && (
+            <img
+              src={
+                typeof intro === 'string' ? intro : URL.createObjectURL(intro)
+              }
+              alt={title[lang]}
+              onClick={() => {
+                if (toNavigateImg) {
+                  window.open(toNavigateImg, '_blank');
+                }
+              }}
+              // 반응형으로 이미지 조정할거면 해야할듯
+              className={`min-w-[160px] h-[120px] max-md:w-40 ${
+                !sdate ? 'mt-9' : 'mt-3'
+              } border-3 md:mr-10 border-black rounded-lg max-md:hidden ${
+                toNavigateImg && 'cursor-pointer'
+              } transition transform duration-300 hover:-translate-y-1 hover:shadow-xl hover:dark:shadow-gray-950`}
+            />
+          )}
+        </div>
         <div className="flex flex-col">
           <span
             id={`${title}-${toNavigateTitle}`}
@@ -80,7 +101,7 @@ export default function Card({
               }
             }}
             // 반응형으로 이미지 조정할거면 해야할듯
-            className={`min-w-[160px] h-[120px] border-3 md:mr-10 border-black rounded-lg md:order-first ${
+            className={`md:hidden min-w-[160px] h-[120px] max-md:w-40 max-md:mt-2 border-3 md:mr-10 border-black rounded-lg ${
               toNavigateImg && 'cursor-pointer'
             } transition transform duration-300 hover:-translate-y-1 hover:shadow-xl hover:dark:shadow-gray-950`}
           />

@@ -136,6 +136,8 @@ export default function Page() {
           <div className="flex flex-col group">
             {ProjectsData.map((project, index) => (
               <Card
+                sdate={project.sdate}
+                edate={project.edate}
                 title={project.title}
                 content={project.content}
                 stacks={project.stacks}
