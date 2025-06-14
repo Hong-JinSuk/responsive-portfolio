@@ -32,7 +32,7 @@ export default function Page() {
   return (
     <div className="flex flex-col lg:flex-row w-full h-full relative">
       {/* <div className="gradation bg-gradient-to-t from-transparent to-white/100 dark:to-[#0E172A]/100 fixed w-full top-0 lg:h-[100px] md:h-16 z-50"></div> */}
-      <div className="gradation bg-gradient-to-t from-transparent to-white/100 dark:to-[#090e1b]/100 fixed w-full top-0 lg:h-[100px] md:h-16 z-50"></div>
+      <div className="gradation bg-gradient-to-t from-transparent to-white/100 dark:to-[#0c1528]/100 fixed w-full top-0 lg:h-[100px] md:h-16 z-50"></div>
       <header className="w-full flex flex-col justify-between lg:sticky lg:top-0 lg:py-24 lg:max-h-screen">
         <section className="flex h-full flex-col space-y-3 mb-6">
           <div className="flex items-center justify-between">
@@ -75,10 +75,10 @@ export default function Page() {
         <section>
           <div className="flex pb-10 pt-10">
             <div className="flex space-x-4">
-              {SocialLink.map(({ src, url, alt }, index) => (
+              {SocialLink.map(({ icon, url, alt }, index) => (
                 <img
                   key={index}
-                  src={src}
+                  src={icon.src}
                   alt={alt}
                   className="size-7 opacity-50 hover:opacity-100 cursor-pointer dark:filter dark:invert"
                   onClick={() => window.open(url, '_blank')} // URL이 있을 때만 이동
@@ -159,7 +159,7 @@ export default function Page() {
           </div>
         </section>
         {/* <div className="gradation bg-gradient-to-b from-transparent to-white/100 dark:to-[#0E172A]/100 fixed w-full bottom-0 h-[100px] z-50"></div> */}
-        <div className="gradation bg-gradient-to-b from-transparent to-white/100 dark:to-[#090e1b]/100 fixed w-full bottom-0 h-[100px] z-50"></div>
+        <div className="gradation bg-gradient-to-b from-transparent to-white/100 dark:to-[#0c1528]/100 fixed w-full bottom-0 h-[100px] z-50"></div>
       </main>
     </div>
   );

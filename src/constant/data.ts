@@ -76,18 +76,22 @@ export const ProjectsData: CardType[] = [
     stacks: ['TypeScript', 'Next.js', 'Tailwind CSS', 'MongoDB'],
     intro: ImageList.pIntro.src,
     toNavigateTitle: '',
-    toNavigateImg: 'https://www.youtube.com/watch?v=591WiUhtz98',
   },
 ];
 
 export const SocialLink = [
   {
-    src: ImageList.Github,
+    icon: ImageList.Github,
     url: 'https://github.com/Hong-JinSuk',
     alt: 'Github',
   },
-  { src: ImageList.LinkedIn, url: '', alt: 'LinkedIn' },
-  { src: ImageList.Instargram, url: '', alt: 'Instagram' },
+  { icon: ImageList.blog, url: 'https://realtone.tistory.com/', alt: 'blog' },
+  {
+    icon: ImageList.LinkedIn,
+    url: '',
+    alt: 'LinkedIn',
+  },
+  { icon: ImageList.Instargram, url: '', alt: 'Instagram' },
 ];
 
 export const IntroduceMyself = {
