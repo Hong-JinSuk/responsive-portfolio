@@ -14,7 +14,8 @@ export default function Card({
   content,
   stacks,
   intro,
-  toNavigate,
+  toNavigateTitle,
+  toNavigateImg,
   className,
 }: CardType) {
   const lang = useAtomValue(languageAtom);
@@ -37,10 +38,10 @@ export default function Card({
         <div className="flex flex-col">
           <span
             className={`w-fit cursor-pointer  font-bold ${
-              toNavigate ? 'hover:text-blue-800' : ''
+              toNavigateTitle ? 'hover:text-blue-800' : ''
             }`}
             onClick={() => {
-              if (toNavigate) {
+              if (toNavigateTitle) {
                 navigate('hong-jinsuk');
               }
             }}
@@ -66,7 +67,12 @@ export default function Card({
           <img
             src={typeof intro === 'string' ? intro : URL.createObjectURL(intro)}
             alt={title[lang]}
-            className="w-56 border-3 md:mr-10 border-black rounded-lg aspect-[3/2] md:order-first"
+            onClick={() => {
+              window.open(toNavigateImg, '_blank');
+            }}
+            className={`w-56 border-3 md:mr-10 border-black rounded-lg aspect-[3/2] md:order-first ${
+              toNavigateImg && 'cursor-pointer'
+            } transition transform duration-300 hover:-translate-y-1 hover:shadow-xl hover:dark:shadow-gray-900`}
           />
         )}
       </div>

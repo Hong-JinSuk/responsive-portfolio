@@ -7,7 +7,8 @@ export type CardType = {
     ko: string;
     eng: string;
   };
-  toNavigate?: string;
+  toNavigateTitle?: string;
+  toNavigateImg?: string;
   sdate?: string;
   edate?: string;
   stacks?: string[];

@@ -1,7 +1,4 @@
-import pIntro from '@/assets/images/code-image.png';
-import Github from '@/assets/images/logo-github.svg';
-import Instargram from '@/assets/images/logo-instagram.svg';
-import LinkedIn from '@/assets/images/logo-linkedin.svg';
+import { ImageList } from '@/assets/images';
 import { CardType } from '@/types/types';
 
 export const ExData: CardType[] = [
@@ -17,7 +14,7 @@ export const ExData: CardType[] = [
       eng: 'I was responsible for frontend development using React in the NongHyup Bank AI Integration Project. I collaborated with LGCNS and Vanguard Lab to define requirements, and participated not only in UI implementation but also in developing frontend functionalities that met those requirements.',
     },
     stacks: ['React', 'TypeScript', 'TailwindCSS', 'RESTful API'],
-    toNavigate: '',
+    toNavigateTitle: '',
   },
 ];
 
@@ -52,6 +49,21 @@ export const AboutMe = [
 
 export const ProjectsData: CardType[] = [
   {
+    sdate: 'MAY 2024',
+    edate: 'JUN 2024',
+    title: {
+      ko: '구름톤트레이닝 - Spoco',
+      eng: 'Spoco in goormtonTraining',
+    },
+    content: {
+      ko: '구름톤트레이닝에서 ',
+      eng: '',
+    },
+    stacks: [],
+    intro: ImageList.spoco.src,
+    toNavigateTitle: '',
+  },
+  {
     title: {
       ko: 'example',
       eng: 'Hama',
@@ -61,15 +73,20 @@ export const ProjectsData: CardType[] = [
       eng: 'An AI-powered web application for erasing objects from an image. The application was sold to Sandoll Group in March 2023.',
     },
     stacks: ['TypeScript', 'Next.js', 'Tailwind CSS', 'MongoDB'],
-    intro: pIntro.src,
-    toNavigate: '',
+    intro: ImageList.pIntro.src,
+    toNavigateTitle: '',
+    toNavigateImg: 'https://www.youtube.com/watch?v=591WiUhtz98',
   },
 ];
 
 export const SocialLink = [
-  { src: Github, url: 'https://github.com/Hong-JinSuk', alt: 'Github' },
-  { src: LinkedIn, url: '', alt: 'LinkedIn' },
-  { src: Instargram, url: '', alt: 'Instagram' },
+  {
+    src: ImageList.Github,
+    url: 'https://github.com/Hong-JinSuk',
+    alt: 'Github',
+  },
+  { src: ImageList.LinkedIn, url: '', alt: 'LinkedIn' },
+  { src: ImageList.Instargram, url: '', alt: 'Instagram' },
 ];
 
 export const IntroduceMyself = {
