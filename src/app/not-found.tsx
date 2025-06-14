@@ -1,6 +1,6 @@
 'use client';
 
-import icon404 from '@/assets/images/icon_404.png';
+import { ImageList } from '@/assets/images';
 import { Button } from '@/components/ui/button';
 import {
   linkMessage,
@@ -34,7 +34,7 @@ export default function NotFound() {
   return (
     <div className="w-full h-full flex flex-col justify-center items-center max-md:mt-16 md:mt-28 lg:mt-40">
       <Image
-        src={icon404}
+        src={ImageList.notFound.src}
         alt=""
         className="size-52 sm:size-72 lg:size-96 max-lg:my-10"
       />
