@@ -118,7 +118,7 @@ export default function Page() {
                 stacks={ex.stacks}
                 key={index}
                 toNavigateTitle={ex.toNavigateTitle}
-                className="py-8 lg:hover:!opacity-100 lg:group-hover:opacity-40 transition-opacity duration-500"
+                className="py-8 hover:!opacity-100 group-hover:opacity-40 transition-opacity duration-500"
               />
             ))}
           </div>
@@ -141,9 +141,9 @@ export default function Page() {
                 stacks={project.stacks}
                 intro={project.intro}
                 key={index}
-                toNavigateTitle=""
+                toNavigateTitle={project.toNavigateTitle}
                 toNavigateImg={project.toNavigateImg}
-                className="py-8 lg:hover:!opacity-100 lg:group-hover:opacity-40 transition-opacity duration-500"
+                className="py-8 hover:!opacity-100 group-hover:opacity-40 transition-opacity duration-500"
               />
             ))}
           </div>

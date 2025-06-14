@@ -16,6 +16,20 @@ export const ExData: CardType[] = [
     stacks: ['React', 'TypeScript', 'TailwindCSS', 'RESTful API'],
     toNavigateTitle: '',
   },
+  {
+    sdate: 'MAR 2025',
+    edate: 'JUL 2025',
+    title: {
+      ko: '농협은행 AI 통합 프로젝트',
+      eng: 'NHBank AI Integration Project',
+    },
+    content: {
+      ko: '농협은행 AI 통합 프로젝트에서 React를 이용한 프론트엔드 개발을 담당하였으며, LGCNS와 뱅가드랩과 협업하여 요구사항을 정리하고, UI뿐만 아니라 요구에 맞는 프론트엔드 기능 구현에도 직접 참여하였습니다.',
+      eng: 'I was responsible for frontend development using React in the NongHyup Bank AI Integration Project. I collaborated with LGCNS and Vanguard Lab to define requirements, and participated not only in UI implementation but also in developing frontend functionalities that met those requirements.',
+    },
+    stacks: ['React', 'TypeScript', 'TailwindCSS', 'RESTful API'],
+    toNavigateTitle: '',
+  },
 ];
 
 export const AboutMe = [
@@ -61,7 +75,7 @@ export const ProjectsData: CardType[] = [
     },
     stacks: [],
     intro: ImageList.spoco.src,
-    toNavigateTitle: '',
+    toNavigateTitle: 'https://github.com/study-for-code/Backend',
     toNavigateImg: 'https://www.youtube.com/watch?v=591WiUhtz98',
   },
   {

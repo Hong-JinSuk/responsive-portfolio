@@ -3,7 +3,7 @@
 import { languageAtom } from '@/store/atom';
 import { CardType } from '@/types/types';
 import { useAtomValue } from 'jotai';
-import { Minus } from 'lucide-react';
+import { ArrowUpRight, Minus } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { Button } from './button';
 
@@ -37,16 +37,23 @@ export default function Card({
         )}
         <div className="flex flex-col">
           <span
-            className={`w-fit cursor-pointer  font-bold ${
-              toNavigateTitle ? 'hover:text-blue-800' : ''
+            id={`${title}-${toNavigateTitle}`}
+            className={`flex items-center w-fit font-bold group/card ${
+              toNavigateTitle && 'hover:text-blue-600 cursor-pointer'
             }`}
             onClick={() => {
               if (toNavigateTitle) {
-                navigate('hong-jinsuk');
+                window.open(toNavigateTitle, '_blank');
               }
             }}
           >
             {title[lang]}
+            {toNavigateTitle && (
+              <ArrowUpRight
+                size={18}
+                className="group-hover/card:translate-x-1 group-hover/card:-translate-y-0.5 transition-transform duration-500"
+              />
+            )}
           </span>
           <span className="text-sm py-3 ">{content[lang]}</span>
           <div className="flex items-center flex-wrap gap-2">
@@ -68,15 +75,17 @@ export default function Card({
             src={typeof intro === 'string' ? intro : URL.createObjectURL(intro)}
             alt={title[lang]}
             onClick={() => {
-              window.open(toNavigateImg, '_blank');
+              if (toNavigateImg) {
+                window.open(toNavigateImg, '_blank');
+              }
             }}
-            className={`w-56 border-3 md:mr-10 border-black rounded-lg aspect-[3/2] md:order-first ${
+            // 반응형으로 이미지 조정할거면 해야할듯
+            className={`min-w-[160px] h-[120px] border-3 md:mr-10 border-black rounded-lg md:order-first ${
               toNavigateImg && 'cursor-pointer'
             } transition transform duration-300 hover:-translate-y-1 hover:shadow-xl hover:dark:shadow-gray-950`}
           />
         )}
       </div>
-      {/* <Separator /> */}
     </div>
   );
 }
