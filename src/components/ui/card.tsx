@@ -72,7 +72,7 @@ export default function Card({
             }}
             className={`w-56 border-3 md:mr-10 border-black rounded-lg aspect-[3/2] md:order-first ${
               toNavigateImg && 'cursor-pointer'
-            } transition transform duration-300 hover:-translate-y-1 hover:shadow-xl hover:dark:shadow-gray-900`}
+            } transition transform duration-300 hover:-translate-y-1 hover:shadow-xl hover:dark:shadow-gray-950`}
           />
         )}
       </div>
