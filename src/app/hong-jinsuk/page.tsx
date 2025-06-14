@@ -32,7 +32,8 @@ export default function Page() {
 
   return (
     <div className="flex flex-col lg:flex-row w-full h-full relative">
-      <div className="gradation bg-gradient-to-t from-transparent to-white/100 dark:to-[#0E172A]/100 fixed w-full top-0 lg:h-[100px] md:h-16 z-50"></div>
+      {/* <div className="gradation bg-gradient-to-t from-transparent to-white/100 dark:to-[#0E172A]/100 fixed w-full top-0 lg:h-[100px] md:h-16 z-50"></div> */}
+      <div className="gradation bg-gradient-to-t from-transparent to-white/100 dark:to-[#090e1b]/100 fixed w-full top-0 lg:h-[100px] md:h-16 z-50"></div>
       <header className="w-full flex flex-col justify-between lg:sticky lg:top-0 lg:py-24 lg:max-h-screen">
         <section className="flex h-full flex-col space-y-3 mb-6">
           <div className="flex items-center justify-between">
@@ -100,7 +101,7 @@ export default function Page() {
           {AboutMe.map((about, index) => (
             <Fragment key={index}>
               <br />
-              <div className="opacity-70">{about[lang]}</div>
+              <div className="opacity-100">{about[lang]}</div>
             </Fragment>
           ))}
         </section>
@@ -117,7 +118,7 @@ export default function Page() {
                 content={ex.content}
                 stacks={ex.stacks}
                 key={index}
-                toNavigate={ex.toNavigate}
+                toNavigateTitle={ex.toNavigateTitle}
                 className="py-8 lg:hover:!opacity-100 lg:group-hover:opacity-40 transition-opacity duration-500"
               />
             ))}
@@ -141,7 +142,8 @@ export default function Page() {
                 stacks={project.stacks}
                 intro={project.intro}
                 key={index}
-                toNavigate=""
+                toNavigateTitle=""
+                toNavigateImg={project.toNavigateImg}
                 className="py-8 lg:hover:!opacity-100 lg:group-hover:opacity-40 transition-opacity duration-500"
               />
             ))}
@@ -157,7 +159,8 @@ export default function Page() {
             />
           </div>
         </section>
-        <div className="gradation bg-gradient-to-b from-transparent to-white/100 dark:to-[#0E172A]/100 fixed w-full bottom-0 h-[100px] z-50"></div>
+        {/* <div className="gradation bg-gradient-to-b from-transparent to-white/100 dark:to-[#0E172A]/100 fixed w-full bottom-0 h-[100px] z-50"></div> */}
+        <div className="gradation bg-gradient-to-b from-transparent to-white/100 dark:to-[#090e1b]/100 fixed w-full bottom-0 h-[100px] z-50"></div>
       </main>
     </div>
   );
