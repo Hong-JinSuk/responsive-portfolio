@@ -60,7 +60,7 @@ export default function Card({
           <span
             id={`${title}-${toNavigateTitle}`}
             className={`flex items-center w-fit font-bold group/card ${
-              toNavigateTitle && 'hover:text-blue-600 cursor-pointer'
+              toNavigateTitle && 'hover:text-green-400 cursor-pointer'
             }`}
             onClick={() => {
               if (toNavigateTitle) {

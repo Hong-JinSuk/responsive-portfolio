@@ -114,7 +114,11 @@ export const SocialLink = [
     url: '',
     alt: 'LinkedIn',
   },
-  { icon: ImageList.Instargram, url: '', alt: 'Instagram' },
+  {
+    icon: ImageList.Instargram,
+    url: 'https://www.instagram.com/jinsuk_hon9/',
+    alt: 'Instagram',
+  },
 ];
 
 export const IntroduceMyself = {

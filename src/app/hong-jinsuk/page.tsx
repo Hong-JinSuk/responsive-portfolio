@@ -76,12 +76,21 @@ export default function Page() {
           <div className="flex pb-10 pt-10">
             <div className="flex space-x-4">
               {SocialLink.map(({ icon, url, alt }, index) => (
+                // url 없으면 안보여주는게 맞나?
                 <img
                   key={index}
                   src={icon.src}
                   alt={alt}
-                  className="size-7 opacity-50 hover:opacity-100 cursor-pointer dark:filter dark:invert"
-                  onClick={() => window.open(url, '_blank')} // URL이 있을 때만 이동
+                  className={`size-7 opacity-50 cursor-pointer dark:filter dark:invert ${
+                    !url
+                      ? 'hover:opacity-50 cursor-default'
+                      : 'hover:opacity-100'
+                  }`}
+                  onClick={() => {
+                    if (url) {
+                      window.open(url, '_blank');
+                    }
+                  }} // URL이 있을 때만 이동
                 />
               ))}
             </div>
@@ -118,7 +127,7 @@ export default function Page() {
                 stacks={ex.stacks}
                 key={index}
                 toNavigateTitle={ex.toNavigateTitle}
-                className="py-8 hover:!opacity-100 group-hover:opacity-40 transition-opacity duration-500"
+                className="py-8 md:hover:!opacity-100 md:group-hover:opacity-40 transition-opacity duration-500"
               />
             ))}
           </div>
@@ -145,7 +154,7 @@ export default function Page() {
                 key={index}
                 toNavigateTitle={project.toNavigateTitle}
                 toNavigateImg={project.toNavigateImg}
-                className="py-8 hover:!opacity-100 group-hover:opacity-40 transition-opacity duration-500"
+                className="py-8 md:hover:!opacity-100 md:group-hover:opacity-40 transition-opacity duration-500"
               />
             ))}
           </div>
