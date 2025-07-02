@@ -1,6 +1,7 @@
 import { ImageList } from '@/assets/images';
 import { languageAtom } from '@/store/atom';
 import { useAtom } from 'jotai';
+import Image from 'next/image';
 import { useEffect, useState } from 'react';
 
 export default function SwitchLang() {
@@ -18,19 +19,24 @@ export default function SwitchLang() {
   return (
     <div className="cursor-pointer">
       {lang === 'ko' ? (
-        <img
-          src={ImageList.koreaFlag.src}
-          alt="South Korea"
-          className="size-7"
-          onClick={() => setLang('eng')}
-        />
+        <div className="relative size-7">
+          <Image
+            src={ImageList.koreaFlag.src}
+            alt="South Korea"
+            className="size-7"
+            onClick={() => setLang('eng')}
+            fill
+          />
+        </div>
       ) : (
-        <img
-          src={ImageList.usaFlag.src}
-          alt="South Korea"
-          className="size-7"
-          onClick={() => setLang('ko')}
-        />
+        <div className="relative size-7">
+          <Image
+            src={ImageList.usaFlag.src}
+            alt="South Korea"
+            onClick={() => setLang('ko')}
+            fill
+          />
+        </div>
       )}
     </div>
   );

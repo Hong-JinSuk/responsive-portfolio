@@ -16,6 +16,7 @@ import { useScrollSpy } from '@/hooks/use-scroll-spy';
 import { languageAtom } from '@/store/atom';
 import { useAtomValue } from 'jotai';
 import { ArrowRight, ArrowUp, Sparkles } from 'lucide-react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { Fragment } from 'react';
 
@@ -77,11 +78,13 @@ export default function Page() {
             <div className="flex space-x-4">
               {SocialLink.map(({ icon, url, alt }, index) => (
                 // url 없으면 안보여주는게 맞나?
-                <img
+                <Image
                   key={index}
                   src={icon.src}
                   alt={alt}
-                  className={`size-7 opacity-50 cursor-pointer dark:filter dark:invert ${
+                  width={28}
+                  height={28}
+                  className={`opacity-50 cursor-pointer dark:filter dark:invert ${
                     !url
                       ? 'hover:opacity-50 cursor-default'
                       : 'hover:opacity-100'

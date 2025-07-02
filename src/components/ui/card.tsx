@@ -4,7 +4,7 @@ import { languageAtom } from '@/store/atom';
 import { CardType } from '@/types/types';
 import { useAtomValue } from 'jotai';
 import { ArrowUpRight, Minus } from 'lucide-react';
-import { useRouter } from 'next/navigation';
+import Image from 'next/image';
 import { Button } from './button';
 
 export default function Card({
@@ -19,11 +19,6 @@ export default function Card({
   className,
 }: CardType) {
   const lang = useAtomValue(languageAtom);
-  const router = useRouter();
-
-  const navigate = (toNavigate: string) => {
-    router.push(`/${toNavigate}`);
-  };
 
   return (
     <div className={`flex flex-col lg:flex-row ${className}`}>
@@ -37,23 +32,26 @@ export default function Card({
             </div>
           )}
           {intro && (
-            <img
-              src={
-                typeof intro === 'string' ? intro : URL.createObjectURL(intro)
-              }
-              alt={title[lang]}
-              onClick={() => {
-                if (toNavigateImg) {
-                  window.open(toNavigateImg, '_blank');
-                }
-              }}
-              // 반응형으로 이미지 조정할거면 해야할듯
+            <div
               className={`min-w-[160px] h-[120px] max-md:w-40 ${
                 !sdate ? 'mt-9' : 'mt-3'
               } border-3 md:mr-10 border-black rounded-lg max-md:hidden ${
                 toNavigateImg && 'cursor-pointer'
               } transition transform duration-300 hover:-translate-y-1 hover:shadow-xl hover:dark:shadow-gray-950`}
-            />
+            >
+              <Image
+                src={
+                  typeof intro === 'string' ? intro : URL.createObjectURL(intro)
+                }
+                alt={title[lang]}
+                onClick={() => {
+                  if (toNavigateImg) {
+                    window.open(toNavigateImg, '_blank');
+                  }
+                }}
+                fill
+              />
+            </div>
           )}
         </div>
         <div className="flex flex-col">
@@ -92,19 +90,24 @@ export default function Card({
           </div>
         </div>
         {intro && (
-          <img
-            src={typeof intro === 'string' ? intro : URL.createObjectURL(intro)}
-            alt={title[lang]}
-            onClick={() => {
-              if (toNavigateImg) {
-                window.open(toNavigateImg, '_blank');
-              }
-            }}
-            // 반응형으로 이미지 조정할거면 해야할듯
+          <div
             className={`md:hidden min-w-[160px] h-[120px] max-md:w-40 max-md:mt-2 border-3 md:mr-10 border-black rounded-lg ${
               toNavigateImg && 'cursor-pointer'
             } transition transform duration-300 hover:-translate-y-1 hover:shadow-xl hover:dark:shadow-gray-950`}
-          />
+          >
+            <Image
+              src={
+                typeof intro === 'string' ? intro : URL.createObjectURL(intro)
+              }
+              alt={title[lang]}
+              onClick={() => {
+                if (toNavigateImg) {
+                  window.open(toNavigateImg, '_blank');
+                }
+              }}
+              fill
+            />
+          </div>
         )}
       </div>
     </div>

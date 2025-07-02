@@ -3,6 +3,24 @@ import { CardType } from '@/types/types';
 
 export const ExData: CardType[] = [
   {
+    sdate: 'DEC 2024',
+    edate: 'FEB 2025',
+    title: {
+      ko: `펜타시스템 자사 프로젝트의 React 전환 및 프론트-백엔드 분리`,
+      eng: `Migration of a legacy in-house project to React with frontend-backend separation`,
+    },
+    content: {
+      ko: `펜타시스템의 자사 프로그램 중 메타데이터 관리 시스템과 포털 시스템의 프론트엔드를 React로 전환하는 작업을 맡아 진행했습니다.
+            이 과정에서 React, TypeScript, TailwindCSS를 활용해 UI를 재구성하고, 프론트엔드와 백엔드를 분리하여 유지보수성과 확장성을 높였습니다.
+            해당 시스템은 이후 펜타시스템의 정식 제품으로 판매되고 있습니다.`,
+      eng: `I led the migration of Penta System’s in-house metadata management and portal systems to React.
+            Using React, TypeScript, and TailwindCSS, I restructured the frontend architecture and decoupled it from the backend, significantly improving maintainability and scalability.
+            The system has since been commercialized as one of Penta System’s official products.`,
+    },
+    stacks: ['React', 'TypeScript', 'TailwindCSS', 'RESTful API'],
+    toNavigateTitle: '',
+  },
+  {
     sdate: 'MAR 2025',
     edate: 'JUL 2025',
     title: {
@@ -35,29 +53,16 @@ export const ExData: CardType[] = [
 export const AboutMe = [
   {
     ko: `안녕하세요. 저는 올해 1년차인 풀스택 개발자 홍진석입니다.`,
-    eng: `I'm a full-stack engineer focusing on creating scalable and
-            maintainable codebases. I have extensive experience with TypeScript,
-            React and Next.js at a startup. Thanks to my work experience at an
-            ad agency, I've honed my communication skills to solve real-world
-            problems interactively.`,
+    eng: `Hi, I'm Hong Jin-Suk. first year full-stack developer`,
   },
   {
-    ko: `My main focus these days is teaching coding and web development to a
-            small group of uni students and graduates. I don't get paid for
-            running this study group, but I genuinely enjoy sharing my knowledge
-            and skills based on my experience :)`,
-    eng: `My main focus these days is teaching coding and web development to a
-            small group of uni students and graduates. I don't get paid for
-            running this study group, but I genuinely enjoy sharing my knowledge
-            and skills based on my experience :)`,
-  },
-  {
-    ko: `My main focus these days is teaching coding and web development to a
-            small group of uni students and graduates. I don't get paid for
-            running this study group, but I genuinely enjoy sharing my knowledge
-            and skills based on my experience :)`,
-    eng: `When I'm not at the computer, I enjoy working out in the gym and
-            hanging out with my wife with a cup of coffee c o f f e e`,
+    ko: `저는 확장가능하고, 요구사항에 유연하게 대처할 수 있는 것을 중점적으로 생각하며 코딩하는 풀스택 개발자입니다.
+         현재 펜타시스템에서 프론트엔드 개발자로 근무 중이며, 자사 프로젝트에서는 간단한 백엔드 개발도 함께 맡고 있습니다.
+         또한 외부 프로젝트를 통해 협업 경험을 쌓으며, 변화하는 요구사항 속에서도 안정적으로 프로젝트를 설계하고 유지하는 방법을 배웠습니다.`,
+    eng: `I’m a full-stack developer who focuses on building scalable and adaptable systems that respond well to changing requirements.
+          Currently, I work as a frontend developer at Penta System, while also handling some backend development for in-house projects.
+          Through collaboration with other companies and real-world project experience, I’ve learned how to design systems that remain flexible and stable, even as needs evolve.
+`,
   },
 ];
 
