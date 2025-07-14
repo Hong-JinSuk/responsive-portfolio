@@ -16,11 +16,11 @@ const nextConfig: NextConfig = {
 
   // github ver
   output: 'export',
-  distDir: isProd ? 'docs' : '.next',
-  basePath: '/responsive-portfolio',
-  assetPrefix: '/responsive-portfolio',
+  distDir: isProd ? 'docs' : '.next', // prod는 GitHub Pages용
+  basePath: isProd ? '/responsive-portfolio' : '',
+  assetPrefix: isProd ? '/responsive-portfolio' : '',
   images: {
-    unoptimized: true, // 정적 사이트용으로 이미지
+    unoptimized: true,
   },
 };
 
