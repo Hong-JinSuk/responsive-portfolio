@@ -1,5 +1,7 @@
 import type { NextConfig } from 'next';
 
+const isProd = process.env.NODE_ENV === 'production';
+
 const nextConfig: NextConfig = {
   // vercel ver
   async redirects() {
@@ -14,7 +16,7 @@ const nextConfig: NextConfig = {
 
   // github ver
   output: 'export',
-  distDir: 'docs',
+  distDir: isProd ? 'docs' : '.next',
   basePath: '/responsive-portfolio',
   assetPrefix: '/responsive-portfolio',
   images: {
