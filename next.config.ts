@@ -1,7 +1,7 @@
 import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  // vercel ver
   async redirects() {
     return [
       {
@@ -11,6 +11,12 @@ const nextConfig: NextConfig = {
       },
     ];
   },
+
+  // github ver
+  output: 'export',
+  distDir: 'docs',
+  basePath: '/responsive-portfolio',
+  assetPrefix: '/responsive-portfolio',
 };
 
 export default nextConfig;
