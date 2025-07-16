@@ -3,6 +3,7 @@ import type { NextConfig } from 'next';
 const isProd = process.env.NODE_ENV === 'production';
 
 const nextConfig: NextConfig = {
+  reactStrictMode: true,
   // vercel ver
   async redirects() {
     return [
@@ -12,6 +13,10 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
     ];
+  },
+
+  images: {
+    unoptimized: true,
   },
 
   // github ver
