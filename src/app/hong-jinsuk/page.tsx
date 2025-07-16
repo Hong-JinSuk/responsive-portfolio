@@ -136,7 +136,7 @@ export default function Page() {
           </div>
           <div className="flex items-center py-6">
             <span className="flex items-center cursor-pointer group hover:underline underline-offset-4 decoration-blue-400">
-              <Link href={'/experience'}>View Full Résumé </Link>
+              <Link href={'/experience'}>View Full Ex </Link>
               <ArrowRight className="size-5 group-hover:ml-2 transition-all duration-300" />
             </span>
           </div>

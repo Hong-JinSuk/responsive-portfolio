@@ -35,15 +35,15 @@ export const ExData: CardType[] = [
     toNavigateTitle: '',
   },
   {
-    sdate: 'MAR 2025',
-    edate: 'JUL 2025',
+    sdate: 'JUL 2025',
+    edate: 'NOW',
     title: {
-      ko: '농협은행 AI 통합 프로젝트',
-      eng: 'NHBank AI Integration Project',
+      ko: '경찰청 - 더플랫폼(정보 차세대) 시스템 구축',
+      eng: 'National Police Agency - The Platform (Next-Generation Information System) Development',
     },
     content: {
-      ko: '농협은행 AI 통합 프로젝트에서 React를 이용한 프론트엔드 개발을 담당하였으며, LGCNS와 뱅가드랩과 협업하여 요구사항을 정리하고, UI뿐만 아니라 요구에 맞는 프론트엔드 기능 구현에도 직접 참여하였습니다.',
-      eng: 'I was responsible for frontend development using React in the NongHyup Bank AI Integration Project. I collaborated with LGCNS and Vanguard Lab to define requirements, and participated not only in UI implementation but also in developing frontend functionalities that met those requirements.',
+      ko: '경찰청에서 정보계 차세대 프로젝트인 더 플랫폼에서 데이터 및 AI 포탈의 프런트 작업을 맡아 진행하였습니다.',
+      eng: `I was in charge of the frontend development for the Data and AI Portal as part of the National Police Agency's next-generation information system project, The Platform.`,
     },
     stacks: ['React', 'TypeScript', 'TailwindCSS', 'RESTful API'],
     toNavigateTitle: '',
