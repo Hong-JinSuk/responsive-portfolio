@@ -42,7 +42,7 @@ export const ExData: CardType[] = [
       eng: 'National Police Agency - The Platform (Next-Generation Information System) Development',
     },
     content: {
-      ko: '경찰청에서 정보계 차세대 프로젝트인 더 플랫폼에서 데이터 및 AI 포탈의 프런트 작업을 맡아 진행하였습니다.',
+      ko: '경찰청에서 정보계 차세대 프로젝트인 더 플랫폼에서 데이터 및 AI 포탈의 프런트 작업을 맡아 개발중입니다.',
       eng: `I was in charge of the frontend development for the Data and AI Portal as part of the National Police Agency's next-generation information system project, The Platform.`,
     },
     stacks: ['React', 'TypeScript', 'TailwindCSS', 'RESTful API'],
@@ -94,16 +94,26 @@ export const ProjectsData: CardType[] = [
   },
   {
     title: {
-      ko: 'example',
-      eng: 'Hama',
+      ko: '구름톤트레이닝 - 도파밍',
+      eng: 'DoFarming - goormtonTraining',
     },
     content: {
-      ko: '프로젝트 예시입니다. 프로젝트 예시입니다. 프로젝트 예시입니다. 프로젝트 예시입니다. 프로젝트 예시입니다. 프로젝트 예시입니다. 프로젝트 예시입니다. 프로젝트 예시입니다.',
-      eng: 'An AI-powered web application for erasing objects from an image. The application was sold to Sandoll Group in March 2023.',
+      ko: '여행을 갈 때, 가장 중요한 목적지를 고르기 힘든 사람들을 위해 프로젝트를 시작하게 되었습니다. 사용자 대신 여행지를 골라주고, 여행지 근처의 식당, 엑티비티 등 다양한 놀거리 및 즐길거리를 추천해줍니다.',
+      eng: 'We started this project for people who find it difficult to choose a travel destination. Our service selects a destination on behalf of the user and recommends various activities and attractions nearby, such as restaurants, entertainment, and things to do.',
     },
-    stacks: ['TypeScript', 'Next.js', 'Tailwind CSS', 'MongoDB'],
-    intro: ImageList.pIntro.src,
-    toNavigateTitle: '',
+    stacks: [
+      'JAVA',
+      'Spring',
+      'MySQL',
+      'MongoDB',
+      'JPA',
+      'AWS',
+      'Git',
+      'Git_Actions',
+    ],
+    intro: ImageList.dofarming.src,
+    toNavigateTitle: 'https://github.com/goorm-dofarming',
+    toNavigateImg: 'https://www.youtube.com/watch?v=mbJmN1jLD6s',
   },
 ];
 

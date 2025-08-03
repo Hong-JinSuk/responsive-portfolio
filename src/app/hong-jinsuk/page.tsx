@@ -121,18 +121,20 @@ export default function Page() {
             EXPERIENCE
           </p>
           <div className="flex flex-col group">
-            {ExData.map((ex, index) => (
-              <Card
-                sdate={ex.sdate}
-                edate={ex.edate}
-                title={ex.title}
-                content={ex.content}
-                stacks={ex.stacks}
-                key={index}
-                toNavigateTitle={ex.toNavigateTitle}
-                className="py-8 md:hover:!opacity-100 md:group-hover:opacity-40 transition-opacity duration-500"
-              />
-            ))}
+            {ExData.slice(-3)
+              .reverse()
+              .map((ex, index) => (
+                <Card
+                  sdate={ex.sdate}
+                  edate={ex.edate}
+                  title={ex.title}
+                  content={ex.content}
+                  stacks={ex.stacks}
+                  key={index}
+                  toNavigateTitle={ex.toNavigateTitle}
+                  className="py-8 md:hover:!opacity-100 md:group-hover:opacity-40 transition-opacity duration-500"
+                />
+              ))}
           </div>
           <div className="flex items-center py-6">
             <span className="flex items-center cursor-pointer group hover:underline underline-offset-4 decoration-blue-400">
@@ -146,20 +148,22 @@ export default function Page() {
             PROJECTS
           </p>
           <div className="flex flex-col group">
-            {ProjectsData.map((project, index) => (
-              <Card
-                sdate={project.sdate}
-                edate={project.edate}
-                title={project.title}
-                content={project.content}
-                stacks={project.stacks}
-                intro={project.intro}
-                key={index}
-                toNavigateTitle={project.toNavigateTitle}
-                toNavigateImg={project.toNavigateImg}
-                className="py-8 md:hover:!opacity-100 md:group-hover:opacity-40 transition-opacity duration-500"
-              />
-            ))}
+            {ProjectsData.slice(-3)
+              .reverse()
+              .map((project, index) => (
+                <Card
+                  sdate={project.sdate}
+                  edate={project.edate}
+                  title={project.title}
+                  content={project.content}
+                  stacks={project.stacks}
+                  intro={project.intro}
+                  key={index}
+                  toNavigateTitle={project.toNavigateTitle}
+                  toNavigateImg={project.toNavigateImg}
+                  className="py-8 md:hover:!opacity-100 md:group-hover:opacity-40 transition-opacity duration-500"
+                />
+              ))}
           </div>
           <div className="flex items-center justify-between py-6">
             <span className="flex items-center cursor-pointer group hover:underline underline-offset-4 decoration-blue-400">
