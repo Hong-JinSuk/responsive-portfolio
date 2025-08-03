@@ -93,6 +93,8 @@ export const ProjectsData: CardType[] = [
     toNavigateImg: 'https://www.youtube.com/watch?v=591WiUhtz98',
   },
   {
+    sdate: 'MAY 2024',
+    edate: 'JUN 2024',
     title: {
       ko: '구름톤트레이닝 - 도파밍',
       eng: 'DoFarming - goormtonTraining',
