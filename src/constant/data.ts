@@ -162,3 +162,8 @@ export const notFoundToastMessage = {
   ko: '잘못된 페이지 접근입니다.',
   eng: `It's Invalid page access.`,
 };
+
+export const noServicePageMessage = {
+  ko: '현재 준비중인 페이지입니다.',
+  eng: 'This Service is Currently Being Prepared',
+};

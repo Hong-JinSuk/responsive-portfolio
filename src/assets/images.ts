@@ -1,4 +1,5 @@
 import pIntro from '@/assets/images/code-image.png';
+import comming_soon from '@/assets/images/img-comming-soon2.png';
 import dofarming from '@/assets/images/img-dofarming.jpg';
 import notFound from '@/assets/images/img-not-found.png';
 import spoco from '@/assets/images/img-spoco.png';
@@ -20,4 +21,5 @@ export const ImageList = {
   koreaFlag,
   usaFlag,
   blog,
+  comming_soon,
 };

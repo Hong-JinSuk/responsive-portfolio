@@ -84,10 +84,10 @@ export default function Page() {
                   alt={alt}
                   width={28}
                   height={28}
-                  className={`opacity-50 cursor-pointer dark:filter dark:invert ${
+                  className={`opacity-50 dark:filter dark:invert ${
                     !url
                       ? 'hover:opacity-50 cursor-default'
-                      : 'hover:opacity-100'
+                      : 'hover:opacity-100 cursor-pointer'
                   }`}
                   onClick={() => {
                     if (url) {
