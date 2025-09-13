@@ -43,7 +43,7 @@ export default function Card({
                 src={
                   typeof intro === 'string' ? intro : URL.createObjectURL(intro)
                 }
-                alt={title[lang]}
+                alt={''}
                 onClick={() => {
                   if (toNavigateImg) {
                     window.open(toNavigateImg, '_blank');
@@ -99,7 +99,7 @@ export default function Card({
               src={
                 typeof intro === 'string' ? intro : URL.createObjectURL(intro)
               }
-              alt={title[lang]}
+              alt={''}
               onClick={() => {
                 if (toNavigateImg) {
                   window.open(toNavigateImg, '_blank');
