@@ -36,17 +36,30 @@ export const ExData: CardType[] = [
   },
   {
     sdate: 'JUL 2025',
-    edate: 'NOW',
+    edate: 'SEP 2025',
     title: {
       ko: '경찰청 - 더플랫폼(정보 차세대) 시스템 구축',
       eng: 'National Police Agency - The Platform (Next-Generation Information System) Development',
     },
     content: {
-      ko: '경찰청에서 정보계 차세대 프로젝트인 더 플랫폼에서 데이터 및 AI 포탈의 프런트 작업을 맡아 개발중입니다.',
-      eng: `I was in charge of the frontend development for the Data and AI Portal as part of the National Police Agency's next-generation information system project, The Platform.`,
+      ko: '경찰청에서 정보계 차세대 프로젝트인 더 플랫폼에서 데이터 및 대시보드 관련 개발을 맡았습니다.',
+      eng: 'At the National Police Agency, I was responsible for developing data and dashboard components for the next-generation information system project, The Platform.',
     },
     stacks: ['React', 'TypeScript', 'TailwindCSS', 'RESTful API'],
     toNavigateTitle: '',
+  },
+  {
+    sdate: 'NOV 2025',
+    edate: 'NOW',
+    title: {
+      ko: '신한은행 - 비정형 데이터 자산화 플랫폼 구축',
+      eng: 'Shinhan Bank – Development of an Unstructured Data Asset Management Platform',
+    },
+    content: {
+      ko: '신한은행에서 개인정보 비식별화 솔루션인 제품을 설치 및 추가 개발을 진행하고 있습니다.',
+      eng: 'At Shinhan Bank, I am responsible for installing and further developing the enterprise personal data de-identification solution.',
+    },
+    stacks: ['React', 'TypeScript', 'TailwindCSS', 'RESTful API', 'Ubuntu'],
   },
 ];
 
