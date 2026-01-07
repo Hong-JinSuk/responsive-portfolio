@@ -50,16 +50,29 @@ export const ExData: CardType[] = [
   },
   {
     sdate: 'NOV 2025',
-    edate: 'NOW',
+    edate: 'DEC 2025',
     title: {
       ko: '신한은행 - 비정형 데이터 자산화 플랫폼 구축',
       eng: 'Shinhan Bank – Development of an Unstructured Data Asset Management Platform',
     },
     content: {
-      ko: '신한은행에서 개인정보 비식별화 솔루션인 제품을 설치 및 추가 개발을 진행하고 있습니다.',
+      ko: '신한은행에서 개인정보 비식별화 솔루션인 제품을 설치 및 SI개발을 담당했습니다.',
       eng: 'At Shinhan Bank, I am responsible for installing and further developing the enterprise personal data de-identification solution.',
     },
     stacks: ['React', 'TypeScript', 'TailwindCSS', 'RESTful API', 'Ubuntu'],
+  },
+  {
+    sdate: 'Jan 2025',
+    edate: 'NOW',
+    title: {
+      ko: '우리금융캐피탈 - 데이터 통합 포탈 구축',
+      eng: 'Woori Finance Capital – Development of Data Integration Portal',
+    },
+    content: {
+      ko: '우리금융캐피탈에서 데이터 통합 포탈 구축 솔루션 및 SI개발 중입니다.',
+      eng: 'At Woori Finance Capital, I am currently working on developing a data integration portal solution and SI development.',
+    },
+    stacks: ['React', 'TypeScript', 'TailwindCSS', 'RESTful API'],
   },
 ];
 
