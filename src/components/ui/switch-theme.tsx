@@ -2,6 +2,7 @@
 import { Moon, Sun } from 'lucide-react';
 import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
+import { flushSync } from 'react-dom'; // 1. flushSync 추가
 
 export default function SwitchTheme() {
   const { theme, systemTheme, setTheme } = useTheme();
@@ -17,19 +18,32 @@ export default function SwitchTheme() {
 
   const defaultTheme = theme === 'system' ? systemTheme : theme;
 
+  const handleThemeChange = (newTheme: string) => {
+    if (!document.startViewTransition) {
+      setTheme(newTheme);
+      return;
+    }
+
+    document.startViewTransition(() => {
+      flushSync(() => {
+        setTheme(newTheme);
+      });
+    });
+  };
+
   return (
     <div className="cursor-pointer">
       <Sun
         className={`size-7 opacity-50 hover:opacity-100 ${
-          defaultTheme === 'dark' && 'hidden'
+          defaultTheme === 'dark' ? 'hidden' : ''
         }`}
-        onClick={() => setTheme('dark')}
+        onClick={() => handleThemeChange('dark')}
       />
       <Moon
         className={`size-7 opacity-50 hover:opacity-100 ${
-          defaultTheme === 'light' && 'hidden'
+          defaultTheme === 'light' ? 'hidden' : ''
         }`}
-        onClick={() => setTheme('light')}
+        onClick={() => handleThemeChange('light')}
       />
     </div>
   );

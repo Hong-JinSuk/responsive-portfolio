@@ -128,6 +128,7 @@ export default function Page() {
                   sdate={ex.sdate}
                   edate={ex.edate}
                   title={ex.title}
+                  company={ex.company}
                   content={ex.content}
                   stacks={ex.stacks}
                   key={index}
@@ -156,6 +157,7 @@ export default function Page() {
                   edate={project.edate}
                   title={project.title}
                   content={project.content}
+                  company={project.company}
                   stacks={project.stacks}
                   intro={project.intro}
                   key={index}

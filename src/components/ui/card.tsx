@@ -11,6 +11,7 @@ export default function Card({
   sdate,
   edate,
   title,
+  company,
   content,
   stacks,
   intro,
@@ -66,7 +67,8 @@ export default function Card({
               }
             }}
           >
-            {title[lang]}
+            {/* {title[lang]} */}
+            {company[lang]} - {title[lang]}
             {toNavigateTitle && (
               <ArrowUpRight
                 size={18}

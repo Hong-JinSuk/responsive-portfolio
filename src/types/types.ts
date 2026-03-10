@@ -7,6 +7,10 @@ export type CardType = {
     ko: string;
     eng: string;
   };
+  company: {
+    ko: string;
+    eng: string;
+  };
   toNavigateTitle?: string;
   toNavigateImg?: string;
   sdate?: string;
@@ -14,6 +18,27 @@ export type CardType = {
   stacks?: string[];
   intro?: string | File;
   className?: string;
+};
+
+export type Experience = {
+  title: {
+    ko: string;
+    eng: string;
+  };
+  company: {
+    ko: string;
+    eng: string;
+  };
+  content: {
+    ko: string;
+    eng: string;
+  };
+  toNavigateTitle?: string;
+  toNavigateImg?: string;
+  sdate?: string;
+  edate?: string;
+  stacks?: string[];
+  intro?: string | File;
 };
 
 export type LanguageType = 'ko' | 'eng';
